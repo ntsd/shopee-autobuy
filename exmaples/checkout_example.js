@@ -1,0 +1,96 @@
+fetch("https://shopee.co.th/api/v4/cart/checkout", {
+  headers: {
+    accept: "application/json",
+    "accept-language": "en-US,en;q=0.9,th;q=0.8",
+    "content-type": "application/json",
+    "if-none-match-": "55b03-92f4809d919ea19870095c2c7f96af5f",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-api-source": "pc",
+    "x-csrftoken": "aIq72kUPAS46IHorw5xlA5378AZ7pH7A",
+    "x-requested-with": "XMLHttpRequest",
+    "x-shopee-language": "th",
+  },
+  referrer: "https://shopee.co.th/cart/",
+  referrerPolicy: "strict-origin-when-cross-origin",
+  body: {
+    selected_shop_order_ids: [
+      {
+        shopid: 2918381,
+        item_briefs: [
+          {
+            itemid: 951730968,
+            modelid: null,
+            item_group_id: null,
+            offerid: null,
+            price: 49500000,
+            quantity: 1,
+            is_add_on_sub_item: null,
+            add_on_deal_id: null,
+            status: 1,
+            cart_item_change_time: 1602433606,
+          },
+        ],
+        shop_vouchers: {},
+      },
+    ],
+    platform_vouchers: {},
+  },
+  method: "POST",
+  mode: "cors",
+  credentials: "include",
+});
+
+fetch("https://shopee.co.th/api/v4/cart/checkout", {
+  headers: {
+    accept: "application/json",
+    "accept-language": "en-US,en;q=0.9,th;q=0.8",
+    "cache-control": "no-cache",
+    "content-type": "application/json",
+    "if-none-match-": "55b03-b64df9b00929935260d6d628f55a4d54",
+    pragma: "no-cache",
+    "sec-ch-ua":
+      '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-api-source": "pc",
+    "x-csrftoken": "QckOEOFpk2VRkwOnzIJpEMLb9aP0s6Gc",
+    "x-requested-with": "XMLHttpRequest",
+    "x-shopee-language": "th",
+  },
+  referrer: "https://shopee.co.th/cart",
+  referrerPolicy: "strict-origin-when-cross-origin",
+  body: {
+    selected_shop_order_ids: [
+      {
+        shopid: 12701671,
+        item_briefs: [
+          {
+            itemid: 7044305983,
+            modelid: 70450384465,
+            item_group_id: null,
+            applied_promotion_id: 1242614553,
+            offerid: null,
+            price: 28500000,
+            quantity: 1,
+            is_add_on_sub_item: null,
+            add_on_deal_id: null,
+            status: 1,
+            cart_item_change_time: 1618859794,
+          },
+        ],
+        shop_vouchers: [],
+      },
+    ],
+    platform_vouchers: [],
+    free_shipping_voucher_info: { free_shipping_voucher_id: 0 },
+    use_coins: false,
+    support_problematic_groups: true,
+  },
+  method: "POST",
+  mode: "cors",
+  credentials: "include",
+});

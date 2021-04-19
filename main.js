@@ -26,17 +26,17 @@ async function checkout(csrfToken, shopId, itemId, modelId = undefined, item) {
           item_briefs: [
             // item,
             {
-              "add_on_deal_id": null,
-              "applied_promotion_id": 0,
-              "cart_item_change_time": secondTimestamp,
-              "is_add_on_sub_item": null,
-              "item_group_id": null,
-              "itemid": itemId,
-              "modelid": modelId,
-              "offerid": null,
-              "price": null,
-              "quantity": 1,
-              "status": 1
+              add_on_deal_id: null,
+              applied_promotion_id: 0,
+              cart_item_change_time: secondTimestamp,
+              is_add_on_sub_item: null,
+              item_group_id: null,
+              itemid: item.itemid,
+              modelid: item.modelid,
+              offerid: null,
+              price: null,
+              quantity: 1,
+              status: 1,
             },
           ],
           shop_vouchers: [],
@@ -195,16 +195,18 @@ async function getCart(csrfToken) {
   return res.json();
 }
 
-var csrfToken = "QckOEOFpk2VRkwOnzIJpEMLb9aP0s6Gc";
-var shopId = 74183478;
-var itemId = 7029178229;
-var modelId = 17196418028;
+var csrfToken = "";
+var shopId = 12701671;
+var itemId = 7044305983;
+var modelId = undefined;
 
 addToCart(csrfToken, shopId, itemId, modelId).then((data) => {
+  console.log("add to cart");
   console.log(data);
   if (data.error == 0) {
     console.log(`successful add ${itemId} to chart`);
     getCart(csrfToken).then((data) => {
+      console.log("get cart");
       console.log(data);
       checkout(
         csrfToken,
@@ -213,6 +215,7 @@ addToCart(csrfToken, shopId, itemId, modelId).then((data) => {
         modelId,
         data.data.shop_order_id_list[0].item_briefs[0]
       ).then((data) => {
+        console.log("checkout");
         console.log(data);
         if (data.error == 0) {
           console.log(`checkout success`);
